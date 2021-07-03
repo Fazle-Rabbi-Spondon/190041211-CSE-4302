@@ -1,66 +1,51 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-class Bank_Account
+
+class Rectangle
 {
 private:
-    char name[30];
-    int acc_num;
-    char type[10];
-    float bal=0;
-
-
+    float l, w;
 public:
+    Rectangle (float a, float b): l(a), w(b)
+    {}
 
-    void customerDetails()
+    Rectangle () : l(1), w(1)
+    {}
+
+
+    float area ()
     {
-        cout<<"Type name: ";
-        scanf ("%s", name);
+        return l*w;
     }
 
-    void accountType()
+    float perimeter ()
     {
-        cout<<"What type of account: ";
-        scanf ("%s", type);
+        return 2*(l+w);
     }
 
-    void balance()
+    void setlength(float a)
     {
-        cout<<"Balance: "<<bal<<endl;
-   //     printf ("%f", balance);
+        if (a>=1.0 && a<=20.0) l=a;
     }
 
-    void deposit()
+    void setwidth (float a)
     {
-        int n;
-        cout<<"The amount you wanna deposit: ";
-        cin>>n;
-        bal += n;
+        if (a>=1.0 && a<=20.0) w=a;
     }
 
-    void withdraw()
+    float getlength ()
     {
-        int n;
-        cout<<"The amount you wanna withdraw: ";
-        cin>> n;
-        if ((bal-n)>=0) bal -= n;
+        return l;
     }
 
-    void display ()
+    float getwidth ()
     {
-        cout<<"Name: "<<name<<endl;
-        cout<<"Account type: "<<type<<endl;
-        cout<<"Balance: "<<bal<<endl;
-
-    }
-
+        return w;
+        }
 };
+
 int main ()
 {
-        Bank_Account a;
-        a.customerDetails();
-        a.accountType();
-        a.balance();
-        a.deposit();
-        a.withdraw();
-        a.display();
+    Rectangle r1;
+
 }
